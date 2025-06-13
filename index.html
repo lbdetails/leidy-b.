@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>L.B. Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -15,26 +16,17 @@
       background: linear-gradient(to bottom, #f8c8dc, #ffffff);
       text-align: center;
       padding: 2rem 1rem;
-      position: relative;
     }
     header h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
       color: #c1839f;
-      position: relative;
-      display: inline-block;
+      font-family: 'Great Vibes', cursive;
     }
-    header h1::after {
-      content: "";
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      height: 15px;
-      background-image: url('https://i.pinimg.com/736x/33/5b/c1/335bc11c389d492421f6de4cc79cf0be.jpg');
-      background-repeat: repeat-x;
-      background-size: contain;
+    header p {
+      color: #c1839f;
+      font-size: 1.5rem;
+      font-family: 'Great Vibes', cursive;
     }
     nav {
       background-color: #f2d6dc;
@@ -54,11 +46,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+      color: #c1839f;
       text-shadow: 2px 2px 4px #000;
       font-size: 2rem;
+      font-family: 'Great Vibes', cursive;
     }
-    .productos, .contacto {
+    .productos, .contacto, .personaliza, .busqueda {
       padding: 2rem;
       text-align: center;
     }
@@ -91,6 +84,37 @@
       color: #8c4f63;
       font-weight: bold;
     }
+    .busqueda input {
+      padding: 0.5rem;
+      width: 60%;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    .busqueda ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+    .busqueda li {
+      padding: 0.5rem;
+      background: #f2d6dc;
+      margin-bottom: 0.5rem;
+      border-radius: 5px;
+      color: #8c4f63;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 400px;
+      margin: auto;
+    }
+    select, input[type=submit], input[type=text] {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
     footer {
       background-color: #f2d6dc;
       text-align: center;
@@ -103,15 +127,20 @@
 <body>
   <header>
     <h1>L.B. Details</h1>
-    <p>Arreglos florales, desayunos y detalles con amor</p>
+    <p>Regala emociones que florecen</p>
   </header>
   <nav>
     <a href="#productos">Tienda</a>
+    <a href="#personaliza">Personaliza</a>
     <a href="#contacto">Contacto</a>
   </nav>
-  <div class="hero">
-    Regala emociones que florecen
-  </div>
+
+  <section class="busqueda">
+    <h2>¿Qué estás buscando?</h2>
+    <input type="text" id="buscador" placeholder="Buscar arreglos florales..." onkeyup="buscar()">
+    <ul id="resultados"></ul>
+  </section>
+
   <section id="productos" class="productos">
     <h2>Catálogo</h2>
     <div class="producto">
@@ -127,35 +156,102 @@
       <a href="https://wa.me/18094371817?text=Hola!%20Estoy%20interesado%20en%20el%20Bouquet%20Simple">Agregar al carrito</a>
     </div>
     <div class="producto">
-      <img src="https://i.pinimg.com/736x/44/30/c4/4430c4eb1687dcfba801b513288fc76d.jpg" alt="Bouquet Simple">
+      <img src="https://i.pinimg.com/736x/44/30/c4/4430c4eb1687dcfba801b513288fc76d.jpg" alt="Bouquet de graduación">
       <h3>Bouquet de graduación</h3>
       <p>RD$2,750</p>
       <a href="https://wa.me/18094371817?text=Hola!%20Estoy%20interesado%20en%20el%20Bouquet%20de%20graduacion">Agregar al carrito</a>
     </div>
     <div class="producto">
-      <img src="<div class="producto">
-      <img src="https://i.pinimg.com/736x/6b/b2/56/6bb256dce9e775e3dcaea615041bf0ab.jpg" alt="Bouquet Simple">
+      <img src="https://i.pinimg.com/736x/6b/b2/56/6bb256dce9e775e3dcaea615041bf0ab.jpg" alt="Bouquet soleado">
       <h3>Bouquet soleado</h3>
       <p>RD$3,500</p>
       <a href="https://wa.me/18094371817?text=Hola!%20Estoy%20interesado%20en%20el%20Bouquet%20soleado">Agregar al carrito</a>
     </div>
     <div class="producto">
-      <img src="<div class="producto">
-      <img src="https://i.pinimg.com/736x/bf/77/66/bf7766bc51a91e48d981dc492de19562.jpg" alt="Bouquet Simple">
+      <img src="https://i.pinimg.com/736x/bf/77/66/bf7766bc51a91e48d981dc492de19562.jpg" alt="Bouquet pretty">
       <h3>Bouquet pretty</h3>
       <p>RD$3,700</p>
       <a href="https://wa.me/18094371817?text=Hola!%20Estoy%20interesado%20en%20el%20Bouquet%20pretty">Agregar al carrito</a>
-
-
-    <!-- Agrega más productos aquí -->
+    </div>
   </section>
+
+  <section id="personaliza" class="personaliza">
+    <h2>Personaliza tu Arreglo</h2>
+    <form action="https://wa.me/18094371817" method="get" target="_blank" onsubmit="return prepararMensaje()">
+      <label>Color de rosas:
+        <select id="rosas">
+          <option>Rojas</option>
+          <option>Blancas</option>
+          <option>Rosas</option>
+          <option>Amarillas</option>
+        </select>
+      </label>
+      <label>Color de envoltura:
+        <select id="envoltura">
+          <option>Beige</option>
+          <option>Rosa pastel</option>
+          <option>Azul claro</option>
+        </select>
+      </label>
+      <label>Color de lazo:
+        <select id="lazo">
+          <option>Rojo</option>
+          <option>Blanco</option>
+          <option>Dorado</option>
+        </select>
+      </label>
+      <label>Mensaje personalizado:
+        <input type="text" id="mensaje" placeholder="Escribe tu dedicatoria">
+      </label>
+      <input type="submit" value="Enviar selección por WhatsApp">
+    </form>
+  </section>
+
   <section id="contacto" class="contacto">
     <h2>Contáctanos</h2>
     <p>Escríbenos por WhatsApp al <a href="https://wa.me/18094371817">809-437-1817</a></p>
     <p>Visítanos en Instagram: <a href="https://instagram.com/l.b_details_" target="_blank">@l.b_details_</a></p>
   </section>
+
   <footer>
     &copy; 2025 L.B. Details. Todos los derechos reservados.
   </footer>
+
+  <script>
+    const productos = [
+      "Bouquet Beige Pink",
+      "Bouquet Simple",
+      "Bouquet de graduación",
+      "Bouquet soleado",
+      "Bouquet pretty"
+    ];
+
+    function buscar() {
+      const entrada = document.getElementById("buscador").value.toLowerCase();
+      const resultados = document.getElementById("resultados");
+      resultados.innerHTML = "";
+      if (entrada.length > 0) {
+        const sugerencias = productos.filter(p => p.toLowerCase().includes(entrada));
+        sugerencias.forEach(s => {
+          const li = document.createElement("li");
+          li.textContent = s;
+          resultados.appendChild(li);
+        });
+      }
+    }
+
+    function prepararMensaje() {
+      const rosas = document.getElementById('rosas').value;
+      const envoltura = document.getElementById('envoltura').value;
+      const lazo = document.getElementById('lazo').value;
+      const mensaje = document.getElementById('mensaje').value;
+
+      const texto = `Hola! Quiero personalizar un arreglo floral con rosas ${rosas}, envoltura ${envoltura}, lazo ${lazo}. Dedicatoria: ${mensaje}`;
+
+      const url = `https://wa.me/18094371817?text=${encodeURIComponent(texto)}`;
+      window.open(url, '_blank');
+      return false;
+    }
+  </script>
 </body>
 </html>
