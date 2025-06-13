@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L.B. Details</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to bottom, #f8c8dc, #ffffff);
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: #c1839f;
+      position: relative;
+      display: inline-block;
+    }
+    header h1::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 15px;
+      background-image: url('https://i.pinimg.com/736x/33/5b/c1/335bc11c389d492421f6de4cc79cf0be.jpg');
+      background-repeat: repeat-x;
+      background-size: contain;
+    }
+    nav {
+      background-color: #f2d6dc;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #8c4f63;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://www.shutterstock.com/image-photo/cherry-blossom-title-bar-background-260nw-93444235.jpg') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+      font-size: 2rem;
+    }
+    .productos, .contacto {
+      padding: 2rem;
+      text-align: center;
+    }
+    .producto {
+      display: inline-block;
+      width: 250px;
+      margin: 1rem;
+      border: 1px solid #f2d6dc;
+      border-radius: 15px;
+      overflow: hidden;
+      background: white;
+    }
+    .producto img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .producto h3 {
+      margin: 0.5rem 0;
+      color: #b76e79;
+    }
+    .producto p {
+      margin: 0.2rem 0;
+    }
+    .producto a {
+      display: block;
+      background-color: #f8c8dc;
+      padding: 0.5rem;
+      text-decoration: none;
+      color: #8c4f63;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #f2d6dc;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #8c4f63;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>L.B. Details</h1>
+    <p>Arreglos florales, desayunos y detalles con amor</p>
+  </header>
+  <nav>
+    <a href="#productos">Tienda</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <div class="hero">
+    Regala emociones que florecen
+  </div>
+  <section id="productos" class="productos">
+    <h2>Catálogo</h2>
+    <div class="producto">
+      <img src="https://i.pinimg.com/736x/5b/03/76/5b0376f8d78871168158af69f68aaebe.jpg" alt="Bouquet Beige pink">
+      <h3>Bouquet Beige Pink</h3>
+      <p>RD$1,850</p>
+      <a href="https://wa.me/18094371817?text=Hola!%20Estoy%20interesado%20en%20el%20Arreglo%20Floral">Agregar al carrito</a>
+    </div>
+    <div class="producto">
+      <img src="https://i.pinimg.com/736x/bf/5f/a0/bf5fa047478bd27422e82f89eed39582.jpg" alt="Bouquet Simple">
+      <h3>Bouquet Simple</h3>
+      <p>RD$1,600</p>
+      <a href="https://wa.me/18094371817?text=Hola!%20Estoy%20interesado%20en%20el%20Bouquet%20Simple">Agregar al carrito</a>
+    </div>
+    <div class="producto">
+      <img src="https://i.pinimg.com/736x/44/30/c4/4430c4eb1687dcfba801b513288fc76d.jpg" alt="Bouquet Simple">
+      <h3>Bouquet de graduación</h3>
+      <p>RD$2,750</p>
+      <a href="https://wa.me/18094371817?text=Hola!%20Estoy%20interesado%20en%20el%20Bouquet%20de%20graduacion">Agregar al carrito</a>
+    </div>
+    <div class="producto">
+      <img src="<div class="producto">
+      <img src="https://i.pinimg.com/736x/6b/b2/56/6bb256dce9e775e3dcaea615041bf0ab.jpg" alt="Bouquet Simple">
+      <h3>Bouquet soleado</h3>
+      <p>RD$3,500</p>
+      <a href="https://wa.me/18094371817?text=Hola!%20Estoy%20interesado%20en%20el%20Bouquet%20soleado">Agregar al carrito</a>
+    </div>
+    <div class="producto">
+      <img src="<div class="producto">
+      <img src="https://i.pinimg.com/736x/bf/77/66/bf7766bc51a91e48d981dc492de19562.jpg" alt="Bouquet Simple">
+      <h3>Bouquet pretty</h3>
+      <p>RD$3,700</p>
+      <a href="https://wa.me/18094371817?text=Hola!%20Estoy%20interesado%20en%20el%20Bouquet%20pretty">Agregar al carrito</a>
+
+
+    <!-- Agrega más productos aquí -->
+  </section>
+  <section id="contacto" class="contacto">
+    <h2>Contáctanos</h2>
+    <p>Escríbenos por WhatsApp al <a href="https://wa.me/18094371817">809-437-1817</a></p>
+    <p>Visítanos en Instagram: <a href="https://instagram.com/l.b_details_" target="_blank">@l.b_details_</a></p>
+  </section>
+  <footer>
+    &copy; 2025 L.B. Details. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
