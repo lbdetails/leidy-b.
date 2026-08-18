@@ -218,7 +218,15 @@
       from { transform: translateY(30px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
-
+   #carrito {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  ...
+  transform: translateY(30px);
+  opacity: 0;
+  pointer-events: none;
+}
   
 #carrito-flotante-icono {
   position: fixed;
@@ -263,21 +271,6 @@
   pointer-events: auto;
 }
 
-#cart-count {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background: red;
-  color: white;
-  font-size: 12px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-}
 </style>
 </head>
 <body>
@@ -577,7 +570,6 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  let contadorCarrito = 0;
   const carrito = [];
 
   window.agregarAlCarrito = function(nombreProducto) {
@@ -588,8 +580,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const colorSelect = p.querySelector('select[name="color"]');
         const color = colorSelect ? colorSelect.value : 'No especificado';
         carrito.push({ nombre: nombreProducto, color: color });
-        contadorCarrito++;
-        document.getElementById("cart-count").innerText = contadorCarrito;
       }
     });
     actualizarCarrito();
@@ -623,8 +613,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.eliminarDelCarrito = function(index) {
     carrito.splice(index, 1);
-    contadorCarrito--;
-    document.getElementById("cart-count").innerText = contadorCarrito;
     actualizarCarrito();
   };
 
@@ -642,8 +630,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.enviarCarrito = function () {
     if (carrito.length === 0) {
-    contadorCarrito = 0;
-    document.getElementById("cart-count").innerText = contadorCarrito;
       alert('Tu carrito está vacío.');
       return;
     }
