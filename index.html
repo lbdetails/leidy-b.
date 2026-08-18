@@ -218,8 +218,8 @@
       from { transform: translateY(30px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
-      
-  #carrito {
+
+   #carrito {
   transform: translateY(100%);
   opacity: 0;
   transition: all 0.3s ease;
@@ -230,7 +230,7 @@
   opacity: 1;
 }
 
-
+  
 #carrito-flotante-icono {
   position: fixed;
   bottom: 20px;
@@ -267,7 +267,7 @@
   opacity: 0;
   pointer-events: none;
 }
-      
+
 #carrito.mostrar {
   transform: translateY(0);
   opacity: 1;
@@ -561,9 +561,8 @@
 </div>
 
 <!-- Botón flotante del carrito -->
-<button id="carrito-flotante-icono" onclick="toggleCarrito()" style="position:relative;">
-  <i class="fas fa-shopping-cart"></i>
-  <span id="cart-count">0</span>
+<button id="carrito-flotante-icono" onclick="toggleCarrito()">
+<i class="fas fa-shopping-cart"></i>
 </button>
 
 
@@ -636,7 +635,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
     const comentario = document.getElementById('comentarioCarrito')?.value.trim() || '';
-    let mensaje = 'Hola! Estoy interesado en el siguiente arreglo personalizado:\n';
+    let mensaje = 'Hola! Estoy interesado en los siguientes productos personalizados:\n';
     mensaje += carrito.map(p => `- ${p.nombre} (Color: ${p.color})`).join('\n');
     mensaje += `\n\nTotal de artículos: ${carrito.length}`;
     if (comentario) {
